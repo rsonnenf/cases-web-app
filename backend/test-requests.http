@@ -1,0 +1,82 @@
+### CREATE five documents.
+POST http://localhost:3000/matters HTTP/1.1
+content-type: application/json
+
+{
+    "caption": "Obergefell v. Hodges",
+    "majorityVote": 5,
+    "dateDecided": "6-26-2015"
+}
+
+
+### CREATE 2
+POST http://localhost:3000/matters HTTP/1.1
+content-type: application/json
+
+{
+    "caption": "Carpenter v. United States",
+    "majorityVote": 5,
+    "dateDecided": "6-22-2018"
+}
+
+### CREATE 3
+POST http://localhost:3000/matters HTTP/1.1
+content-type: application/json
+
+{
+    "caption": "Bostock v. Clayton County",
+    "majorityVote": 6,
+    "dateDecided": "6-15-2020"
+}
+
+### CREATE 4
+POST http://localhost:3000/matters HTTP/1.1
+content-type: application/json
+
+{
+    "caption": "Daubert v. Merrell Dow Pharmaceuticals, Inc.",
+    "majorityVote": 7,
+    "dateDecided": "6-28-1993"
+}
+
+### CREATE 5
+POST http://localhost:3000/matters HTTP/1.1
+content-type: application/json
+
+{
+    "caption": "Janus v. AFSCME",
+    "majorityVote": 5,
+    "dateDecided": "6-27-2018"
+}
+
+
+### RETRIEVE all documents.
+GET http://localhost:3000/matters HTTP/1.1
+
+
+
+### RETRIEVE a document by its ID.
+### Replace the following ID with one that exists in the collection.
+GET http://localhost:3000/matters/656b4d899d5ff062ce4a02a9 HTTP/1.1
+
+
+### UPDATE one document's year, by ID.
+### Replace the ID in the following request with one that exists
+### and update the year:
+PUT http://localhost:3000/matters/656b5ee17cdaac023b3b8f84 HTTP/1.1
+content-type: application/json
+
+{
+    "caption": "Obergefell v. Hodges",
+    "majorityVote": 5,
+    "dateDecided": "6-26-2016"
+}
+
+### DELETE by ID (responds with nothing if successful):
+DELETE http://localhost:3000/matters/656b5ee17cdaac023b3b8f84 HTTP/1.1
+
+
+
+### RETRIEVE all documents (responds with 4 or the original 5):
+GET http://localhost:3000/matters HTTP/1.1
+
